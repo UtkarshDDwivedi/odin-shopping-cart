@@ -1,0 +1,164 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+    padding: 5rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.content {
+    /* margin-right: 13rem;
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem; */
+
+    margin-right: 0;
+    margin-bottom: 2rem;
+
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    animation: fadeUp 800ms ease-out forwards;
+}
+
+.content h2 {
+    /* font-size: 6rem; */
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    color: #F28482;
+}
+
+.content p {
+    color: #F6BD60;
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
+
+.content button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 14.5rem;
+    height: 4.5rem;
+    border-radius: 3rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    background-color: #F28482;
+    background-color: #ab921375;
+    background-image: url('https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871');
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    filter: hue-rotate(100deg);
+    box-shadow: #8a60f69c 4px 4px;
+    transition: transform 700ms ease,
+                box-shadow 700ms ease,
+                background 1500ms ease;
+}
+
+.content button:hover {
+    transform: scale(1.05);
+    background-position: center;
+    box-shadow: #F28482 4px 4px;
+}
+
+.product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 65vh;
+    width: 65vh; */
+    height: clamp(280px, 50vw, 500px);
+    width: clamp(280px, 50vw, 500px);
+    border-radius: 50%;
+    background-color: #F6BD60;
+    overflow: hidden;
+    animation: fadeUp 800ms ease-out forwards;
+    transition: transform 200ms ease-out;
+}
+
+.product img {
+    height: 115%;
+    margin-top: 3rem;
+    /* margin-left: 14rem; */
+    object-fit: contain;
+    animation: fadeUp 1600ms ease-out forwards;
+    transform: translateZ(40px);
+}
+
+.productWrapper {
+    transition: transform 200ms ease-out;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    will-change: transform;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* clicks go through */
+  z-index: -1; /* behind content */
+}
+
+.star {
+  position: absolute;
+  color: #F6BD60;
+  font-size: 1.4rem;
+  opacity: 0.6;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Position each star nicely around empty areas */
+.star:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+.star:nth-child(2) { top: 30%; left: 40%; animation-delay: 1s; }
+.star:nth-child(3) { top: 65%; left: 3%; animation-delay: 2s; }
+.star:nth-child(4) { top: 20%; left: 55%; animation-delay: 1.5s; }
+.star:nth-child(5) { top: 80%; left: 20%; animation-delay: 2.5s; }
+.star:nth-child(6) { top: 50%; left: 93%; animation-delay: 0.5s; }
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+
+/* Mobile Design */
+@media (max-width: 900px) {
+    .body {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+        gap: 5rem;
+    }
+
+    .content {
+        align-items: center;
+    }
+}
