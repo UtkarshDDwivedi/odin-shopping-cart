@@ -63,6 +63,7 @@
     filter: hue-rotate(100deg);
     transition: background 1500ms;
     z-index: 0;
+    opacity: 0;
 }
 
 .btn>* {
@@ -72,6 +73,7 @@
 
 .btn:hover::before {
     background-position: center;
+    opacity: 1;
 }
 
 .btn:hover {
@@ -110,7 +112,7 @@
     margin-left: 2rem;
     margin-right: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
     gap: 1.5rem;
     width: 70%;
 }
@@ -124,6 +126,10 @@
     justify-content: center;
     align-items: center;
     background-color: #F6BD60;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
 }
 
 @media (max-width: 965px) {
@@ -133,14 +139,14 @@
 
     .filter {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 90%;
-        height: 100vh;
+        top: 1rem;
+        left: 5rem;
+        width: 50%;
+        height: 50vh;
         background: white;
-        transform: translateX(-100%);
+        transform: translateX(-200%);
         transition: transform 0.3s ease-in-out;
-        z-index: 1000;
+        z-index: 1100;
     }
 
     .filter.active {
@@ -148,7 +154,7 @@
     }
 
     .btn {
-        width: 30%;
+        width: 70%;
     }
 
     .products {
@@ -165,9 +171,11 @@
     }
 
     .sideBar {
-        height: 24px;
-        width: 24px;
-        position: relative;
-        right: 14px;
+        height: 32px;
+        width: 32px;
+    }
+
+    .btn {
+        width: 90%;
     }
 }

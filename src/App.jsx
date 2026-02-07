@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [productsInCart, setProductsInCart] = useState([]);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -14,7 +15,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Outlet context={products} />
+      <Outlet context={[products, productsInCart, setProductsInCart]} />
     </>
   )
 }

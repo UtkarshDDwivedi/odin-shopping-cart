@@ -8,12 +8,12 @@ import electronicsPng from '../assets/electronics.png';
 import Card from './Card';
 
 function Products() {
-    const [catalogue, setCatalogue] = useState([]);
+    const [category, setCategory] = useState("men's clothing");
     const [isOpen, setIsOpen] = useState(false);
-    const products = useOutletContext();
+    const [products, productsInCart, setProductsInCart] = useOutletContext();
 
     function handleClick(category) {
-        setCatalogue((prevCatalogue) => products.filter(product => product.category == category));
+        setCategory((prevCategory) => category);
         setIsOpen(false);
     }
 
@@ -52,7 +52,11 @@ function Products() {
             </div>
 
             <div className={styles.products}>
-                <Card product={products[0]} />
+                {
+                    products.filter(product => product.category == category).map(product => (
+                        <Card product={product} key={product.id} productsInCart = {productsInCart} setProductsInCart = {setProductsInCart}/>
+                    ))
+                }
             </div>
         </div>
     )
