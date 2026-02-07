@@ -168,9 +168,10 @@
         transform: translateX(-200%);
         transition: transform 0.3s ease-in-out;
         z-index: 1100;
+        animation: none;
     }
 
-    .filter.active {
+    .active {
         transform: translateX(0);
     }
 
