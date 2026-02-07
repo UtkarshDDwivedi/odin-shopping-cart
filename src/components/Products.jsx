@@ -5,18 +5,31 @@ import boyPng from '../assets/boy.png';
 import girlPng from '../assets/girl.png';
 import jeweleryPng from '../assets/jewelery.png';
 import electronicsPng from '../assets/electronics.png';
+import Card from './Card';
 
 function Products() {
     const [catalogue, setCatalogue] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
     const products = useOutletContext();
 
     function handleClick(category) {
         setCatalogue((prevCatalogue) => products.filter(product => product.category == category));
+        setIsOpen(false);
     }
 
     return (
         <div className={styles.body}>
-            <div className={styles.filter}>
+            <div className={`${styles.sideBar} ${isOpen ? styles.open : ''}`} onClick={() => setIsOpen(prev => !prev)}>
+                {
+                    isOpen ? (
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"><path d="M400-240 160-480l240-240 56 58-142 142h486v80H314l142 142-56 58Z" /></svg>
+                    ) : (
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" /></svg>
+                    )
+                }
+            </div>
+
+            <div className={`${styles.filter} ${isOpen ? styles.active : ''}`}>
                 <h3>Categories</h3>
                 <div className={styles.btnDiv}>
                     <button className={`${styles.btn} ${styles.boyBtn}`} onClick={() => handleClick("men's clothing")}>
@@ -36,6 +49,10 @@ function Products() {
                         <div><img src={electronicsPng} alt="electronics" /></div>
                     </button>
                 </div>
+            </div>
+
+            <div className={styles.products}>
+                <Card product={products[0]} />
             </div>
         </div>
     )

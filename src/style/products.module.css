@@ -2,6 +2,7 @@
     display: flex;
     margin: 2rem;
     color: #4d4c49;
+    align-items: flex-start;
 }
 
 .filter {
@@ -15,7 +16,7 @@
     gap: 1rem;
     border-radius: 16px;
     transition: background 2000ms,
-                color 1500ms;
+        color 1500ms;
 }
 
 .filter h3 {
@@ -64,7 +65,7 @@
     z-index: 0;
 }
 
-.btn > * {
+.btn>* {
     position: relative;
     z-index: 1;
 }
@@ -99,4 +100,74 @@
 .jeweleryBtn img,
 .electronicsBtn img {
     height: 65%;
+}
+
+.products {
+    border: 2px solid #e2cfb6;
+    box-shadow: #e2cfb6 4px 4px 8px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    width: 70%;
+}
+
+.sideBar {
+    display: none;
+    height: 48px;
+    width: 48px;
+    border: 2px solid#e2cfb6;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6BD60;
+}
+
+@media (max-width: 965px) {
+    .sideBar {
+        display: flex;
+    }
+
+    .filter {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: 100vh;
+        background: white;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .filter.active {
+        transform: translateX(0);
+    }
+
+    .btn {
+        width: 30%;
+    }
+
+    .products {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .products {
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .sideBar {
+        height: 24px;
+        width: 24px;
+        position: relative;
+        right: 14px;
+    }
 }
