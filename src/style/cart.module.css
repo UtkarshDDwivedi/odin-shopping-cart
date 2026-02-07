@@ -1,0 +1,93 @@
+.body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 4rem;
+    color: #4d4c49;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+.headings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.headings h2 {
+    font-size: 2.5rem;
+}
+
+.headings p {
+    font-size: 1.5rem;
+}
+
+.products {
+    display: grid;
+    grid-template-rows: repeat(1fr);
+}
+
+/* Summary Box Design  */
+
+.summary {
+    background: #f6efe8;
+    padding: 1.5rem;
+    border: 2px solid #e2cfb6;
+    border-radius: 20px;
+    width: 320px;
+    box-shadow: #e2cfb6 2px 2px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60%;
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+}
+
+.summary h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #4a4a4a;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #555;
+}
+
+.divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 0.5rem 0;
+}
+
+.total {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.checkoutBtn {
+    width: 80%;
+    align-self: center;
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 999px;
+    background-color: #8fb5a8;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.checkoutBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px #0000001f;
+}

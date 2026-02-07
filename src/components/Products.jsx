@@ -5,7 +5,7 @@ import boyPng from '../assets/boy.png';
 import girlPng from '../assets/girl.png';
 import jeweleryPng from '../assets/jewelery.png';
 import electronicsPng from '../assets/electronics.png';
-import Card from './Card';
+import ProductCard from './ProductCard';
 
 function Products() {
     const [category, setCategory] = useState("men's clothing");
@@ -54,7 +54,7 @@ function Products() {
             <div className={styles.products}>
                 {
                     products.filter(product => product.category == category).map(product => (
-                        <Card product={product} key={product.id} productsInCart={productsInCart} setProductsInCart={setProductsInCart} />
+                        <ProductCard product={product} key={product.id} productsInCart={productsInCart} setProductsInCart={setProductsInCart} />
                     ))
                 }
             </div>

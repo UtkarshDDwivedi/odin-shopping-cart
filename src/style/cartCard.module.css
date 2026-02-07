@@ -1,0 +1,105 @@
+.card {
+  background: #f6efe8;
+  border: 2px solid #e2cfb6;
+  border-radius: 20px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Left side product info */
+.product {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Image container */
+.holder {
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.holder img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+/* Text */
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.description h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.description p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #7a9e94; /* minty accent */
+}
+
+/* Right side controls */
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Quantity control */
+.qtyControl {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #eec895;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid #e2cfb6;
+}
+
+.qtyControl button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #8fb5a8;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.qtyControl button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.qtyControl div {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 600;
+  color: #4a4a4a;
+}

@@ -1,6 +1,6 @@
-import styles from '../style/card.module.css';
+import styles from '../style/productCard.module.css';
 
-function Card({ product, productsInCart, setProductsInCart }) {
+function ProductCard({ product, productsInCart, setProductsInCart }) {
     if (!product) return null;
 
     const cartItem = productsInCart.find(item => item.id === product.id);
@@ -77,4 +77,4 @@ function Card({ product, productsInCart, setProductsInCart }) {
     )
 }
 
-export default Card;
+export default ProductCard;
