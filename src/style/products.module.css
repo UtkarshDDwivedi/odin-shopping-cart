@@ -196,8 +196,10 @@
         height: 32px;
         width: 32px;
     }
+}
 
-    .btn {
-        width: 90%;
+@media (max-width: 400px) {
+    .filter {
+        height: 55vh;
     }
 }
