@@ -17,6 +17,8 @@
     border-radius: 16px;
     transition: background 2000ms,
         color 1500ms;
+    position: sticky;
+    top: 2rem;
 }
 
 .filter h3 {
@@ -132,6 +134,11 @@
     z-index: 1100;
 }
 
+.activeCategory {
+    background-color: #FB2163;
+    color: #FFF7ED;
+}
+
 @media (max-width: 965px) {
     .sideBar {
         display: flex;
@@ -154,7 +161,7 @@
     }
 
     .btn {
-        width: 70%;
+        width: 100%;
     }
 
     .products {

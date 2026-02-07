@@ -32,19 +32,19 @@ function Products() {
             <div className={`${styles.filter} ${isOpen ? styles.active : ''}`}>
                 <h3>Categories</h3>
                 <div className={styles.btnDiv}>
-                    <button className={`${styles.btn} ${styles.boyBtn}`} onClick={() => handleClick("men's clothing")}>
+                    <button className={`${styles.btn} ${styles.boyBtn} ${category === "men's clothing" ? styles.activeCategory : ""}`} onClick={() => handleClick("men's clothing")}>
                         <p>Men's Collection</p>
                         <div><img src={boyPng} alt="boy" /></div>
                     </button>
-                    <button className={`${styles.btn} ${styles.girlBtn}`} onClick={() => handleClick("women's clothing")}>
+                    <button className={`${styles.btn} ${styles.girlBtn} ${category === "women's clothing" ? styles.activeCategory : ""}`} onClick={() => handleClick("women's clothing")}>
                         <p>Women's Collection</p>
                         <div><img src={girlPng} alt="girl" /></div>
                     </button>
-                    <button className={`${styles.btn} ${styles.jeweleryBtn}`} onClick={() => handleClick("jewelery")}>
+                    <button className={`${styles.btn} ${styles.jeweleryBtn} ${category === "jewelery" ? styles.activeCategory : ""}`} onClick={() => handleClick("jewelery")}>
                         <p>Jewelery</p>
                         <div><img src={jeweleryPng} alt="jewelery" /></div>
                     </button>
-                    <button className={`${styles.btn} ${styles.electronicsBtn}`} onClick={() => handleClick("electronics")}>
+                    <button className={`${styles.btn} ${styles.electronicsBtn} ${category === "electronics" ? styles.activeCategory : ""}`} onClick={() => handleClick("electronics")}>
                         <p>Electronics</p>
                         <div><img src={electronicsPng} alt="electronics" /></div>
                     </button>
@@ -54,7 +54,7 @@ function Products() {
             <div className={styles.products}>
                 {
                     products.filter(product => product.category == category).map(product => (
-                        <Card product={product} key={product.id} productsInCart = {productsInCart} setProductsInCart = {setProductsInCart}/>
+                        <Card product={product} key={product.id} productsInCart={productsInCart} setProductsInCart={setProductsInCart} />
                     ))
                 }
             </div>
