@@ -19,6 +19,7 @@
         color 1500ms;
     position: sticky;
     top: 2rem;
+    animation: fadeUp 800ms ease-out forwards;
 }
 
 .filter h3 {
@@ -117,6 +118,7 @@
     grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
     gap: 1.5rem;
     width: 70%;
+    animation: fadeUp 800ms ease-out forwards;
 }
 
 .sideBar {
@@ -137,6 +139,18 @@
 .activeCategory {
     background-color: #FB2163;
     color: #FFF7ED;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 965px) {
