@@ -36,7 +36,7 @@ function CartCard({ product, productsInCart, setProductsInCart }) {
                 </div>
 
                 <div className={styles.description}>
-                    <h3> {product.title} </h3>
+                    <h3> {window.innerWidth > 515 ? product.title : product.title.slice(0, 20) + '...'} </h3>
                     <p>${product.price}</p>
                 </div>
             </div>
