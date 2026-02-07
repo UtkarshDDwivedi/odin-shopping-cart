@@ -1,0 +1,102 @@
+.body {
+    display: flex;
+    margin: 2rem;
+    color: #4d4c49;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    /* height: 60vh; */
+    width: 15vw;
+    border: 2px solid #e2cfb6;
+    box-shadow: #e2cfb6 4px 4px 8px;
+    padding: 1.5rem;
+    gap: 1rem;
+    border-radius: 16px;
+    transition: background 2000ms,
+                color 1500ms;
+}
+
+.filter h3 {
+    font-size: 1.7rem;
+}
+
+/* .filter:hover {
+    background-color: #92D9BE;
+    color: #FFF7ED;
+} */
+
+.btnDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.btn {
+    font-size: 1rem;
+    height: 4.5rem;
+    border-radius: 4rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #FFF7ED;
+    border: solid #e2cfb6;
+    color: #4d4c49;
+
+    position: relative;
+    overflow: hidden;
+    transition: color 1500ms;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: url('https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871');
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    filter: hue-rotate(100deg);
+    transition: background 1500ms;
+    z-index: 0;
+}
+
+.btn > * {
+    position: relative;
+    z-index: 1;
+}
+
+.btn:hover::before {
+    background-position: center;
+}
+
+.btn:hover {
+    color: #FFF7ED;
+}
+
+.btn div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background-color: #F6BD60;
+    border-radius: 50%;
+}
+
+.btn img {
+    height: 80%;
+}
+
+.girlBtn img {
+    position: relative;
+    left: -2px;
+}
+
+.jeweleryBtn img,
+.electronicsBtn img {
+    height: 65%;
+}

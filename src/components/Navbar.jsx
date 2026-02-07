@@ -19,7 +19,7 @@ function Navbar() {
                 <div>
                     <ul className={`${styles['nav-links']} ${isOpen ? styles.active : ''}`}>
                         <li><Link to='/' onClick={() => setIsOpen(false)}>HOME</Link></li>
-                        <li><Link to='products' onClick={() => setIsOpen(false)}>PRODUCTS</Link></li>
+                        <li><Link to='products' onClick={() => setIsOpen(false)}>SHOP</Link></li>
                         <li><Link to='cart' onClick={() => setIsOpen(false)}>
                             CART
                             <svg className={styles.cartIcon} viewBox="0 0 24 24" fill="none">
